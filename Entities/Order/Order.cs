@@ -15,6 +15,9 @@ namespace DTFusionZ_BE.Entities
 
         public decimal OrderTotal { get; set; }
         public string Status { get; set; } = "New"; // e.g., "New," "In Progress," "Ready," "Completed," "Canceled"
+
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
 

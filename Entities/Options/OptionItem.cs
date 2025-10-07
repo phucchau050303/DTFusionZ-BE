@@ -5,7 +5,6 @@ namespace DTFusionZ_BE.Entities
         public int MaxSelections { get; set; }
 
         //FK
-
         public int OptionGroupId { get; set; }
         public OptionGroup OptionGroup { get; set; }
 

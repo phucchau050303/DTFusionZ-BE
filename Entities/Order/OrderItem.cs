@@ -9,6 +9,8 @@ namespace DTFusionZ_BE.Entities
         public decimal TotalPrice { get; set; }
 
         public string SpecialInstructions { get; set; } = string.Empty;
+
+        public ICollection<OrderItemOption> OrderItemOptions { get; set; } = new List<OrderItemOption>();
         
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }

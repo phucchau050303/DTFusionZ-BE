@@ -1,11 +1,13 @@
-namespace DTFusionZ_BE.Entitites
+namespace DTFusionZ_BE.Entities
 {
     public class Category
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public ICollection<Item> Items { get; set; } = new List<Item>();
     }
 }
