@@ -1,0 +1,56 @@
+# .NET build artifacts
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Rider settings
+.idea/
+
+# ASP.NET secrets
+secrets.json
+
+# Entity Framework migrations (optional, if you want to ignore)
+#migrations/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# NuGet packages
+*.nupkg
+packages/
+.nuget/
+
+# Build results
+*.dll
+*.exe
+*.pdb
+
+# Test results
+TestResults/
+*.coverage
+
+# Others
+*.vspscc
+*.vssscc
+
+# Environment files
+.env
+
+# Crash dumps
+*.dmp
+
+# Publish directory
+publish/
