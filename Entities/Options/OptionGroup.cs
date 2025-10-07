@@ -1,4 +1,4 @@
-namespace DTFusionZ_BE.Entitites
+namespace DTFusionZ_BE.Entities
 {
     public class OptionGroup
     {

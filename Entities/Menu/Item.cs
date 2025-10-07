@@ -1,4 +1,4 @@
-namespace DTFusionZ_BE.Entitites
+namespace DTFusionZ_BE.Entities
 {
     public class Item
     {
@@ -11,8 +11,9 @@ namespace DTFusionZ_BE.Entitites
         public decimal Price { get; set; }
 
         public bool IsAvailable { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; }
+        public DateTime? DeletedAt { get; set; }
 
         // Foreign key to Category
         public int CategoryId { get; set; }

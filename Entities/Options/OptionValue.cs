@@ -1,4 +1,4 @@
-namespace DTFusionZ_BE.Entitites
+namespace DTFusionZ_BE.Entities
 { 
     public class OptionValue
     {
@@ -10,7 +10,7 @@ namespace DTFusionZ_BE.Entitites
 
         // Foreign key to OptionGroup
         public int OptionGroupId { get; set; }
-        
+
         public OptionGroup OptionGroup { get; set; }
     } 
 }
