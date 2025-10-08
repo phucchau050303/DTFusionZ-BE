@@ -5179,25 +5179,31 @@
     ]
   },
   "packageFolders": {
-    "/home/peter-hoang-chau/.nuget/packages/": {}
+    "C:\\Users\\pchub\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/peter-hoang-chau/JRM/DTFusionZ-BE/DTFusionZ-BE.csproj",
+      "projectUniqueName": "A:\\JRM\\DTFusionZ-BE\\DTFusionZ-BE.csproj",
       "projectName": "DTFusionZ-BE",
-      "projectPath": "/home/peter-hoang-chau/JRM/DTFusionZ-BE/DTFusionZ-BE.csproj",
-      "packagesPath": "/home/peter-hoang-chau/.nuget/packages/",
-      "outputPath": "/home/peter-hoang-chau/JRM/DTFusionZ-BE/obj/",
+      "projectPath": "A:\\JRM\\DTFusionZ-BE\\DTFusionZ-BE.csproj",
+      "packagesPath": "C:\\Users\\pchub\\.nuget\\packages\\",
+      "outputPath": "A:\\JRM\\DTFusionZ-BE\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/peter-hoang-chau/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\pchub\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "/usr/lib/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5216,7 +5222,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -5270,7 +5276,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

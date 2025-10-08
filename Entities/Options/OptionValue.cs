@@ -11,6 +11,6 @@ namespace DTFusionZ_BE.Entities
         // Foreign key to OptionGroup
         public int OptionGroupId { get; set; }
 
-        public OptionGroup OptionGroup { get; set; }
+    public OptionGroup? OptionGroup { get; set; }
     } 
 }

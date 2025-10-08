@@ -8,11 +8,11 @@ namespace DTFusionZ_BE.Entities
 
         // Foreign key to OrderItem
         public int OrderItemId { get; set; }
-        public OrderItem OrderItem { get; set; }
+    public OrderItem? OrderItem { get; set; }
 
         // Foreign key to OptionValue
         public int OptionValueId { get; set; }
-        public OptionValue OptionValue { get; set; }
+    public OptionValue? OptionValue { get; set; }
 
     }
 }
