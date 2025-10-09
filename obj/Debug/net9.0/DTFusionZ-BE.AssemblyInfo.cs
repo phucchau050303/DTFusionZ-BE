@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DTFusionZ-BE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+131d938b21d095af3203e5f34769cd04f999fc8a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3e13e98cf04eabc4807b512ce4307871240c669")]
 [assembly: System.Reflection.AssemblyProductAttribute("DTFusionZ-BE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DTFusionZ-BE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

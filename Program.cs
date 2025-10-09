@@ -1,45 +1,73 @@
-var builder = WebApplication.CreateBuilder(args);
+using DTFusionZ_BE.Data;
+using DTFusionZ_BE.Entities;
+using DTFusionZ_BE.Utilities.Seeder;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+namespace DTFusionZ_BE
 {
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
 
-    app.UseSwaggerUI();
-    app.UseSwagger();
-}
+            // Add services to the container.
+            builder.Services.AddDbContext<DTFusionZDbContext>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-app.UseHttpsRedirection();
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+                options.JsonSerializerOptions.WriteIndented = true;
+            });
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+            builder.Services.AddCors(options => {
+                options.AddPolicy("AllowAll", builder => {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+            });
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+            // Register the PasswordHasher service
+            //builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 
-app.Run();
+            var app = builder.Build();
+            app.UseCors("AllowAll");
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+            using (var scope = app.Services.CreateScope())
+            {
+                try
+                {
+                    var dbContext = scope.ServiceProvider.GetRequiredService<DTFusionZDbContext>();
+                    dbContext.Database.Migrate(); // Apply any pending migrations
+                    DataSeeder.SeedData(dbContext); // Seed initial data
+                    Console.WriteLine("Database migrated and seeded successfully.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"An error occurred while migrating or seeding the database: {ex.Message}");
+                }
+            }
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthorization();
+
+            app.MapControllers();
+
+            app.Run();
+        }
+    }
 }

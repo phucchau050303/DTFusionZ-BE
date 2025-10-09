@@ -19,7 +19,7 @@ namespace DTFusionZ_BE.Entities
 
         // Foreign key to Category
         public int CategoryId { get; set; }
-    public Category? Category { get; set; }
+        public Category? Category { get; set; }
     }
     
 }

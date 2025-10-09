@@ -6,7 +6,7 @@ namespace DTFusionZ_BE.Entities
 
         //FK
         public int OptionGroupId { get; set; }
-    public OptionGroup? OptionGroup { get; set; }
+        public OptionGroup? OptionGroup { get; set; }
 
         public int ItemId { get; set; }
 

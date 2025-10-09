@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "hnwFkqIdWpny4n8ugrkySAM/J3sp4QTOql8r1JTH+/c=",
-  "Source": "DTFusionZ-BE",
-  "BasePath": "_content/DTFusionZ-BE",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"hnwFkqIdWpny4n8ugrkySAM/J3sp4QTOql8r1JTH+/c=","Source":"DTFusionZ-BE","BasePath":"_content/DTFusionZ-BE","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
