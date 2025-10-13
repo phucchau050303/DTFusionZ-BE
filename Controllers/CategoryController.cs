@@ -123,7 +123,9 @@ namespace DTFusionZ_BE.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
+            var category = await _context.Categories
+                .Include(c => c.Items)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (category == null)
             {
@@ -132,10 +134,16 @@ namespace DTFusionZ_BE.Controllers
 
             try
             {
-                _context.Items.RemoveRange(_context.Items.Where(i => i.CategoryId == id));
-                _context.Categories.Remove(category);
-                await _context.SaveChangesAsync();
+                // Soft delete the category
+                category.DeletedAt = DateTime.UtcNow;
+                
+                // Soft delete all related items
+                foreach (var item in category.Items)
+                {
+                    item.DeletedAt = DateTime.UtcNow;
+                }
 
+                await _context.SaveChangesAsync();
                 return NoContent();
             }
             catch (Exception ex)
