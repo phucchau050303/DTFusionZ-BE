@@ -18,7 +18,7 @@ namespace DTFusionZ_BE.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configure relationships and constraints if needed
+            
             modelBuilder.Entity<Item>()
                 .HasOne(i => i.Category)
                 .WithMany(c => c.Items)
