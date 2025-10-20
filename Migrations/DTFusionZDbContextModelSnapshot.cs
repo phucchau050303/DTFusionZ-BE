@@ -93,6 +93,35 @@ namespace DTFusionZ_BE.Migrations
                     b.ToTable("Items");
                 });
 
+            modelBuilder.Entity("DTFusionZ_BE.Entities.ItemOptionGroup", b =>
+                {
+                    b.Property<int>("ItemId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("OptionGroupId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("OptionGroupId1")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ItemId", "OptionGroupId");
+
+                    b.HasIndex("OptionGroupId");
+
+                    b.HasIndex("OptionGroupId1");
+
+                    b.ToTable("ItemOptionGroup");
+                });
+
             modelBuilder.Entity("DTFusionZ_BE.Entities.OptionGroup", b =>
                 {
                     b.Property<int>("Id")
@@ -101,12 +130,24 @@ namespace DTFusionZ_BE.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<bool>("IsRequired")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("MaxSelections")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -121,6 +162,12 @@ namespace DTFusionZ_BE.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -129,7 +176,11 @@ namespace DTFusionZ_BE.Migrations
                         .HasColumnType("integer");
 
                     b.Property<decimal>("PriceModifier")
-                        .HasColumnType("numeric");
+                        .HasPrecision(10, 2)
+                        .HasColumnType("numeric(10,2)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -268,6 +319,29 @@ namespace DTFusionZ_BE.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("DTFusionZ_BE.Entities.ItemOptionGroup", b =>
+                {
+                    b.HasOne("DTFusionZ_BE.Entities.Item", "Item")
+                        .WithMany("ItemOptionGroups")
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DTFusionZ_BE.Entities.OptionGroup", "OptionGroup")
+                        .WithMany()
+                        .HasForeignKey("OptionGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DTFusionZ_BE.Entities.OptionGroup", null)
+                        .WithMany("ItemOptionGroups")
+                        .HasForeignKey("OptionGroupId1");
+
+                    b.Navigation("Item");
+
+                    b.Navigation("OptionGroup");
+                });
+
             modelBuilder.Entity("DTFusionZ_BE.Entities.OptionValue", b =>
                 {
                     b.HasOne("DTFusionZ_BE.Entities.OptionGroup", "OptionGroup")
@@ -322,8 +396,15 @@ namespace DTFusionZ_BE.Migrations
                     b.Navigation("Items");
                 });
 
+            modelBuilder.Entity("DTFusionZ_BE.Entities.Item", b =>
+                {
+                    b.Navigation("ItemOptionGroups");
+                });
+
             modelBuilder.Entity("DTFusionZ_BE.Entities.OptionGroup", b =>
                 {
+                    b.Navigation("ItemOptionGroups");
+
                     b.Navigation("OptionValues");
                 });
 

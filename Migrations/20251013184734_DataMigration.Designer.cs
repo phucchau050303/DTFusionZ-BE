@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DTFusionZ_BE.Migrations
 {
     [DbContext(typeof(DTFusionZDbContext))]
-    [Migration("20251009040109_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20251013184734_DataMigration")]
+    partial class DataMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,6 +83,9 @@ namespace DTFusionZ_BE.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int?>("OptionGroupId")
+                        .HasColumnType("integer");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
@@ -93,7 +96,33 @@ namespace DTFusionZ_BE.Migrations
 
                     b.HasIndex("CategoryId");
 
+                    b.HasIndex("OptionGroupId");
+
                     b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("DTFusionZ_BE.Entities.ItemOptionGroup", b =>
+                {
+                    b.Property<int>("ItemId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("OptionGroupId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ItemId", "OptionGroupId");
+
+                    b.HasIndex("OptionGroupId");
+
+                    b.ToTable("ItemOptionGroup");
                 });
 
             modelBuilder.Entity("DTFusionZ_BE.Entities.OptionGroup", b =>
@@ -104,12 +133,24 @@ namespace DTFusionZ_BE.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<bool>("IsRequired")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("MaxSelections")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -124,6 +165,12 @@ namespace DTFusionZ_BE.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -132,7 +179,11 @@ namespace DTFusionZ_BE.Migrations
                         .HasColumnType("integer");
 
                     b.Property<decimal>("PriceModifier")
-                        .HasColumnType("numeric");
+                        .HasPrecision(10, 2)
+                        .HasColumnType("numeric(10,2)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -268,7 +319,30 @@ namespace DTFusionZ_BE.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("DTFusionZ_BE.Entities.OptionGroup", null)
+                        .WithMany("Items")
+                        .HasForeignKey("OptionGroupId");
+
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("DTFusionZ_BE.Entities.ItemOptionGroup", b =>
+                {
+                    b.HasOne("DTFusionZ_BE.Entities.Item", "Item")
+                        .WithMany("ItemOptionGroups")
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DTFusionZ_BE.Entities.OptionGroup", "OptionGroup")
+                        .WithMany()
+                        .HasForeignKey("OptionGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Item");
+
+                    b.Navigation("OptionGroup");
                 });
 
             modelBuilder.Entity("DTFusionZ_BE.Entities.OptionValue", b =>
@@ -325,8 +399,15 @@ namespace DTFusionZ_BE.Migrations
                     b.Navigation("Items");
                 });
 
+            modelBuilder.Entity("DTFusionZ_BE.Entities.Item", b =>
+                {
+                    b.Navigation("ItemOptionGroups");
+                });
+
             modelBuilder.Entity("DTFusionZ_BE.Entities.OptionGroup", b =>
                 {
+                    b.Navigation("Items");
+
                     b.Navigation("OptionValues");
                 });
 

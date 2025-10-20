@@ -35,7 +35,11 @@ namespace DTFusionZ_BE.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    IsRequired = table.Column<bool>(type: "boolean", nullable: false)
+                    IsRequired = table.Column<bool>(type: "boolean", nullable: false),
+                    MaxSelections = table.Column<int>(type: "integer", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -78,7 +82,8 @@ namespace DTFusionZ_BE.Migrations
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    CategoryId = table.Column<int>(type: "integer", nullable: false)
+                    CategoryId = table.Column<int>(type: "integer", nullable: false),
+                    OptionGroupId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -89,6 +94,11 @@ namespace DTFusionZ_BE.Migrations
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Items_OptionGroups_OptionGroupId",
+                        column: x => x.OptionGroupId,
+                        principalTable: "OptionGroups",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -98,7 +108,10 @@ namespace DTFusionZ_BE.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    PriceModifier = table.Column<decimal>(type: "numeric", nullable: false),
+                    PriceModifier = table.Column<decimal>(type: "numeric(10,2)", precision: 10, scale: 2, nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     OptionGroupId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -106,6 +119,33 @@ namespace DTFusionZ_BE.Migrations
                     table.PrimaryKey("PK_OptionValues", x => x.Id);
                     table.ForeignKey(
                         name: "FK_OptionValues_OptionGroups_OptionGroupId",
+                        column: x => x.OptionGroupId,
+                        principalTable: "OptionGroups",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ItemOptionGroup",
+                columns: table => new
+                {
+                    ItemId = table.Column<int>(type: "integer", nullable: false),
+                    OptionGroupId = table.Column<int>(type: "integer", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ItemOptionGroup", x => new { x.ItemId, x.OptionGroupId });
+                    table.ForeignKey(
+                        name: "FK_ItemOptionGroup_Items_ItemId",
+                        column: x => x.ItemId,
+                        principalTable: "Items",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ItemOptionGroup_OptionGroups_OptionGroupId",
                         column: x => x.OptionGroupId,
                         principalTable: "OptionGroups",
                         principalColumn: "Id",
@@ -173,9 +213,19 @@ namespace DTFusionZ_BE.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_ItemOptionGroup_OptionGroupId",
+                table: "ItemOptionGroup",
+                column: "OptionGroupId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Items_CategoryId",
                 table: "Items",
                 column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Items_OptionGroupId",
+                table: "Items",
+                column: "OptionGroupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OptionValues_OptionGroupId",
@@ -207,6 +257,9 @@ namespace DTFusionZ_BE.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "ItemOptionGroup");
+
+            migrationBuilder.DropTable(
                 name: "OrderItemOption");
 
             migrationBuilder.DropTable(
@@ -216,9 +269,6 @@ namespace DTFusionZ_BE.Migrations
                 name: "OrderItem");
 
             migrationBuilder.DropTable(
-                name: "OptionGroups");
-
-            migrationBuilder.DropTable(
                 name: "Items");
 
             migrationBuilder.DropTable(
@@ -226,6 +276,9 @@ namespace DTFusionZ_BE.Migrations
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "OptionGroups");
         }
     }
 }
