@@ -8,31 +8,37 @@ namespace DTFusionZ_BE.Utilities.Seeder
     {
         public static void SeedData(DTFusionZDbContext context)
         {
-            if (context.Categories.Any() || context.Items.Any()) return;
+            if (context.Categories.Any()) return;
 
             var categories = new[]
             {
-                new Category { Name = "Rice Bowl" },
-                new Category { Name = "Bento" },
-                new Category { Name = "Fish And Chips" }
-            };
-
-            var items = new[]
-            {
-                new Item { Name = "Chicken Teriyaki Bento", Description = "Grilled chicken with teriyaki sauce Bento.", Price = 8.99m, Category = categories[1], ImageUrl = "https://example.com/images/chicken_teriyaki_rice_bowl.jpg" },
-                new Item { Name = "Beef Bulgogi Rice Bowl", Description = "Marinated beef with vegetables over steamed rice.", Price = 9.99m, Category = categories[0], ImageUrl = "https://example.com/images/beef_bulgogi_rice_bowl.jpg" },
-                new Item { Name = "Salmon Bento", Description = "Grilled salmon with rice, salad, and miso soup.", Price = 12.99m, Category = categories[1], ImageUrl = "https://example.com/images/salmon_bento.jpg" },
-                new Item { Name = "Chicken Katsucurry", Description = "Breaded chicken thigh with rice and curry.", Price = 11.99m, Category = categories[0], ImageUrl = "https://example.com/images/chicken_katsucurry.jpg" },
-                new Item { Name = "Classic Fish and Chips", Description = "Battered fish fillet with fries and tartar sauce.", Price = 10.99m, Category = categories[2], ImageUrl = "https://example.com/images/classic_fish_and_chips.jpg" },
+                new Category { Name = "Rice Bowl", Items = new List<Item>
+                {
+                    new Item { Name = "Chicken Teriyaki Rice Bowl", Description = "Grilled chicken with teriyaki sauce over steamed rice.", Price = 7.5m, ImageUrl = "https://example.com/images/chicken_teriyaki_rice_bowl.jpg" },
+                    new Item { Name = "Chicken Katsucurry", Description = "Breaded chicken thigh with rice and curry.", Price = 11.99m, ImageUrl = "https://example.com/images/chicken_katsucurry.jpg" },
+                } },
+                new Category { Name = "Bento" , Items = new List<Item>
+                {
+                    new Item { Name = "Pepper Crust Tuna Bento", Description = "Grilled Tuna with rice, salad, and miso sauce.", Price = 12.99m, ImageUrl = "https://example.com/images/salmon_bento.jpg" },
+                    new Item { Name = "Chicken Teriyaki Bento", Description = "Grilled chicken with teriyaki sauce Bento.", Price = 8.99m, ImageUrl = "https://example.com/images/chicken_teriyaki_rice_bowl.jpg" },
+                } },
+                new Category { Name = "Fish And Chips" , Items = new List<Item>
+                {
+                    new Item { Name = "Classic Fish and Chips", Description = "Battered fish fillet with fries and tartar sauce.", Price = 10.99m, ImageUrl = "https://example.com/images/classic_fish_and_chips.jpg" },
+                } }
             };
 
             context.Categories.AddRange(categories);
-            context.Items.AddRange(items);
-            context.SaveChanges();
+            
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while saving data: {ex.Message}");
+                // Optionally, log the exception details to a file or other logging mechanism
+            }
         }
-
- // DB has been seeded
-
-
     }
 }
