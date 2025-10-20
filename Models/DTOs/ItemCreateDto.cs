@@ -20,5 +20,8 @@ namespace DTFusionZ_BE.Models.DTOs
 
         [Required]
         public bool IsAvailable { get; set; }
+
+        [Required]
+        public int CategoryId { get; set; }
     }
 }
