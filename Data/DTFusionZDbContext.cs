@@ -13,6 +13,9 @@ namespace DTFusionZ_BE.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<OptionGroup> OptionGroups { get; set; }
         public DbSet<OptionValue> OptionValues { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<ItemOptionGroup> ItemOptionGroups { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

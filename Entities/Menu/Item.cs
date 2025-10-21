@@ -20,6 +20,9 @@ namespace DTFusionZ_BE.Entities
         // Foreign key to Category
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
+
+        // Navigation property for the junction table
+        public ICollection<ItemOptionGroup> ItemOptionGroups { get; set; } = new List<ItemOptionGroup>();
     }
     
 }
