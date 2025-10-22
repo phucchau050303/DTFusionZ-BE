@@ -31,16 +31,37 @@ namespace DTFusionZ_BE.Data
                 .WithMany(og => og.OptionValues)
                 .HasForeignKey(ov => ov.OptionGroupId);
 
-            modelBuilder.Entity<Order>()
-                    .HasMany(o => o.OrderItems)
-                    .WithOne(oi => oi.Order)
-                    .HasForeignKey(oi => oi.OrderId);
 
-            // OrderItem -> OrderItemOptions
+            // Global query filter for soft delete
+            modelBuilder.Entity<Order>()
+                .HasQueryFilter(o => o.DeletedAt == null);
+
+            modelBuilder.Entity<OrderItem>()
+                .HasQueryFilter(oi => oi.DeletedAt == null);
+
+            modelBuilder.Entity<OrderItemOption>()
+                .HasQueryFilter(oio => oio.DeletedAt == null);
+
+
+            // Configure Order -> OrderItem cascade delete
+            modelBuilder.Entity<Order>()
+                .HasMany(o => o.OrderItems)
+                .WithOne(oi => oi.Order)
+                .HasForeignKey(oi => oi.OrderId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Configure OrderItem -> OrderItemOption cascade delete
             modelBuilder.Entity<OrderItem>()
                 .HasMany(oi => oi.OrderItemOptions)
                 .WithOne(oio => oio.OrderItem)
-                .HasForeignKey(oio => oio.OrderItemId);
+                .HasForeignKey(oio => oio.OrderItemId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<OrderItemOption>()
+                .HasOne(oio => oio.OptionValue)
+                .WithMany()
+                .HasForeignKey(oio => oio.OptionValueId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ItemOptionGroup>()
                 .HasKey(iog => new { iog.ItemId, iog.OptionGroupId });
@@ -49,13 +70,13 @@ namespace DTFusionZ_BE.Data
                 .HasOne(iog => iog.Item)
                 .WithMany(i => i.ItemOptionGroups)
                 .HasForeignKey(iog => iog.ItemId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ItemOptionGroup>()
                 .HasOne(iog => iog.OptionGroup)
-                .WithMany()
+                .WithMany(i => i.ItemOptionGroups)
                 .HasForeignKey(iog => iog.OptionGroupId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<OptionValue>()
                 .Property(ov => ov.PriceModifier)
