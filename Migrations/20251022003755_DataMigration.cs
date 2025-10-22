@@ -47,7 +47,7 @@ namespace DTFusionZ_BE.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Order",
+                name: "Orders",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -65,7 +65,7 @@ namespace DTFusionZ_BE.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Order", x => x.Id);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -82,8 +82,7 @@ namespace DTFusionZ_BE.Migrations
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    CategoryId = table.Column<int>(type: "integer", nullable: false),
-                    OptionGroupId = table.Column<int>(type: "integer", nullable: true)
+                    CategoryId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -94,11 +93,6 @@ namespace DTFusionZ_BE.Migrations
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Items_OptionGroups_OptionGroupId",
-                        column: x => x.OptionGroupId,
-                        principalTable: "OptionGroups",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -133,7 +127,8 @@ namespace DTFusionZ_BE.Migrations
                     OptionGroupId = table.Column<int>(type: "integer", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    OptionGroupId1 = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -150,6 +145,11 @@ namespace DTFusionZ_BE.Migrations
                         principalTable: "OptionGroups",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ItemOptionGroup_OptionGroups_OptionGroupId1",
+                        column: x => x.OptionGroupId1,
+                        principalTable: "OptionGroups",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -178,9 +178,9 @@ namespace DTFusionZ_BE.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderItem_Order_OrderId",
+                        name: "FK_OrderItem_Orders_OrderId",
                         column: x => x.OrderId,
-                        principalTable: "Order",
+                        principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -218,14 +218,14 @@ namespace DTFusionZ_BE.Migrations
                 column: "OptionGroupId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ItemOptionGroup_OptionGroupId1",
+                table: "ItemOptionGroup",
+                column: "OptionGroupId1");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Items_CategoryId",
                 table: "Items",
                 column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Items_OptionGroupId",
-                table: "Items",
-                column: "OptionGroupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OptionValues_OptionGroupId",
@@ -269,16 +269,16 @@ namespace DTFusionZ_BE.Migrations
                 name: "OrderItem");
 
             migrationBuilder.DropTable(
+                name: "OptionGroups");
+
+            migrationBuilder.DropTable(
                 name: "Items");
 
             migrationBuilder.DropTable(
-                name: "Order");
+                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "Categories");
-
-            migrationBuilder.DropTable(
-                name: "OptionGroups");
         }
     }
 }

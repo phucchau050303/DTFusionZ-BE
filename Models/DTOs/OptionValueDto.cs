@@ -4,13 +4,10 @@ namespace DTFusionZ_BE.Models.DTOs
 {
     public class OptionValueDto
     {
-        [Required]
-        public string Name { get; set; }
-
-        public decimal PriceModifier { get; set; }
-
-        [Required]
+        public int Id { get; set; }
         public int OptionGroupId { get; set; }
+        public required string Name { get; set; }
+        public decimal PriceModifier { get; set; }
     }
 
     public class OptionValueResponseDto

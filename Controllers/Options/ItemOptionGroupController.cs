@@ -19,31 +19,36 @@ namespace DTFusionZ_BE.Controllers
 
         // GET: api/options/item-option-groups
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ItemOptionGroup>>> GetItemOptionGroups()
+        public async Task<ActionResult<IEnumerable<ItemOptionGroupResponseDto>>> GetItemOptionGroups()
         {
-            return await _context.Set<ItemOptionGroup>()
+            var itemOptionGroups = await _context.Set<ItemOptionGroup>()
                 .Include(iog => iog.Item)
                     .ThenInclude(i => i.Category)
                 .Include(iog => iog.OptionGroup)
                     .ThenInclude(og => og.OptionValues)
+                .Where(iog => iog.DeletedAt == null)
                 .Select(iog => new ItemOptionGroupResponseDto
                 {
-                    ItemId = iog.Item.Id,
+                    ItemId = iog.Item!.Id,
                     ItemName = iog.Item.Name,
-                    CategoryName = iog.Item.Category.Name,
-                    OptionGroupId = iog.OptionGroup.Id,
+                    CategoryName = iog.Item.Category!.Name,
+                    OptionGroupId = iog.OptionGroup!.Id,
                     OptionGroupName = iog.OptionGroup.Name,
                     IsRequired = iog.OptionGroup.IsRequired,
                     MinSelection = iog.OptionGroup.IsRequired ? 1 : 0,
                     MaxSelection = iog.OptionGroup.MaxSelections,
-                    OptionValues = iog.OptionGroup.OptionValues.Select(ov => new OptionValueResponseDto
-                    {
-                        Id = ov.Id,
-                        Name = ov.Name,
-                        PriceModifier = ov.PriceModifier
-                    }).ToList()
+                    OptionValues = iog.OptionGroup.OptionValues
+                        .Where(ov => ov.DeletedAt == null)
+                        .Select(ov => new OptionValueResponseDto
+                        {
+                            Id = ov.Id,
+                            Name = ov.Name,
+                            PriceModifier = ov.PriceModifier
+                        }).ToList()
                 })
                 .ToListAsync();
+
+            return Ok(itemOptionGroups);
         }
 
         // POST: api/options/item-option-groups
@@ -100,7 +105,7 @@ namespace DTFusionZ_BE.Controllers
 
         // DELETE: api/options/item-option-groups/{itemId}/{optionGroupId}
         [HttpDelete("{itemId}/{optionGroupId}")]
-        public async Task<IActionResult> DeleteItemOptionGroup(int itemId, int optionGroupId
+        public async Task<IActionResult> DeleteItemOptionGroup(int itemId, int optionGroupId)
         {
             var itemOptionGroup = await _context.Set<ItemOptionGroup>()
                 .FirstOrDefaultAsync(iog => iog.ItemId == itemId && iog.OptionGroupId == optionGroupId);
@@ -110,7 +115,7 @@ namespace DTFusionZ_BE.Controllers
                 return NotFound();
             }
 
-            _context.Set<ItemOptionGroup>().Remove(itemOptionGroup);
+            itemOptionGroup.DeletedAt = DateTime.UtcNow;
             await _context.SaveChangesAsync();
 
             return NoContent();

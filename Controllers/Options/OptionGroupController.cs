@@ -24,6 +24,7 @@ namespace DTFusionZ_BE.Controllers
         {
             return await _context.OptionGroups
                 .Include(og => og.OptionValues)
+                .Include(og => og.ItemOptionGroups)
                 .ToListAsync();
         }
 
@@ -32,6 +33,7 @@ namespace DTFusionZ_BE.Controllers
         {
             var optionGroup = await _context.OptionGroups
                 .Include(og => og.OptionValues)
+                .Include(og => og.ItemOptionGroups)
                 .FirstOrDefaultAsync(og => og.Id == id);
 
             if (optionGroup == null)

@@ -4,19 +4,15 @@ namespace DTFusionZ_BE.Models.DTOs
 {
     public class ItemOptionGroupResponseDto
     {
-        [Required]
         public int ItemId { get; set; }
-        [Required]
-        public string ItemName { get; set; }
-        [Required]
-        public string CategoryName { get; set; }
-        [Required]
+        public required string ItemName { get; set; }
+        public required string CategoryName { get; set; }
         public int OptionGroupId { get; set; }
-        public string OptionGroupName { get; set; }
+        public required string OptionGroupName { get; set; }
         public bool IsRequired { get; set; }
         public int MinSelection { get; set; }
         public int MaxSelection { get; set; }
-        public List<OptionValueDto> OptionValues { get; set; }
+        public required List<OptionValueResponseDto> OptionValues { get; set; }
     }
 
     public class ItemOptionGroupCreateDto

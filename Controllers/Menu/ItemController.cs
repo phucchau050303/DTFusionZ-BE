@@ -25,6 +25,7 @@ namespace DTFusionZ_BE.Controllers
         {
             return await _context.Items
                 .Include(i => i.Category)
+                .Include(i => i.ItemOptionGroups)
                 .ToListAsync();
         }
 

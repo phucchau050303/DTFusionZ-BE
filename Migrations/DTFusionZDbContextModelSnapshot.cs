@@ -234,7 +234,7 @@ namespace DTFusionZ_BE.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("DTFusionZ_BE.Entities.OrderItem", b =>

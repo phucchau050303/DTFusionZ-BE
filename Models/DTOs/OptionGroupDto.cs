@@ -16,14 +16,20 @@ namespace DTFusionZ_BE.Models.DTOs
         public int MaxSelections { get; set; }
 
         public List<OptionValueDto> OptionValues { get; set; } = new List<OptionValueDto>();
+
+        public List<ItemOptionGroupCreateDto> ItemOptionGroups { get; set; } = new List<ItemOptionGroupCreateDto>();
     }
 
-    public class ItemOptionGroupResponseDto
+    public class OptionGroupResponseDto
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public bool IsRequired { get; set; }
         public int MaxSelections { get; set; }
-        public List<OptionValueDto> OptionValues { get; set; } = new List<OptionValueDto>();
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public List<OptionValueDto> OptionValues { get; set; } = new();
+        public List<ItemOptionGroupResponseDto> Items { get; set; } = new();
     }
+
 }

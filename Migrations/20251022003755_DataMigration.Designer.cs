@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DTFusionZ_BE.Migrations
 {
     [DbContext(typeof(DTFusionZDbContext))]
-    [Migration("20251013194002_RemoveDirectItemsRelationship")]
-    partial class RemoveDirectItemsRelationship
+    [Migration("20251022003755_DataMigration")]
+    partial class DataMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -237,7 +237,7 @@ namespace DTFusionZ_BE.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("DTFusionZ_BE.Entities.OrderItem", b =>
