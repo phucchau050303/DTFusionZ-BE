@@ -3,6 +3,11 @@ bin/
 obj/
 out/
 
+## Configuration files with secrets
+appsettings.Development.json
+appsettings.Production.json
+*.user
+
 # User-specific files
 *.user
 *.suo

@@ -3,6 +3,8 @@ using DTFusionZ_BE.Entities;
 using DTFusionZ_BE.Utilities.Seeder;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using DTFusionZ_BE.Config;
+using Stripe;
 
 namespace DTFusionZ_BE
 {
@@ -32,6 +34,15 @@ namespace DTFusionZ_BE
                            .AllowAnyHeader();
                 });
             });
+
+            // Configure Stripe
+            builder.Services.Configure<StripeSettings>(
+                builder.Configuration.GetSection("Stripe"));
+            
+            // Initialize Stripe
+            StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
+
+            builder.Services.AddScoped<StripeService>();
 
             // Register the PasswordHasher service
             //builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
