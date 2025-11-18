@@ -31,7 +31,6 @@ namespace DTFusionZ_BE.Controllers
                 {
                     ItemId = iog.Item!.Id,
                     ItemName = iog.Item.Name,
-                    CategoryName = iog.Item.Category!.Name,
                     OptionGroupId = iog.OptionGroup!.Id,
                     OptionGroupName = iog.OptionGroup.Name,
                     IsRequired = iog.OptionGroup.IsRequired,
@@ -49,6 +48,50 @@ namespace DTFusionZ_BE.Controllers
                 .ToListAsync();
 
             return Ok(itemOptionGroups);
+        }
+
+        // GET: api/options/item-option-groups/{item-id}/
+        [HttpGet("{itemId}")]
+        public async Task<ActionResult<IEnumerable<ItemOptionGroupResponseDto>>> GetItemOptionGroupsByItemId(int itemId)
+        {
+            var itemOptionsGroups = await _context.Set<ItemOptionGroup>()
+                .Where(iog => iog.ItemId == itemId && iog.DeletedAt == null)
+                .Include(iog => iog.Item)
+                .Include(iog => iog.OptionGroup)
+                    .ThenInclude(og => og.OptionValues)
+                .Select(iog => new ItemOptionGroupResponseDto
+                {
+                    ItemId = iog.ItemId,
+                    ItemName = iog.Item.Name,
+                    OptionGroupId = iog.OptionGroupId,
+                    OptionGroupName = iog.OptionGroup.Name,
+                    IsRequired = iog.OptionGroup.IsRequired,
+                    MinSelection = iog.OptionGroup.IsRequired ? 1 : 0,
+                    MaxSelection = iog.OptionGroup.MaxSelections,
+                    OptionValues = iog.OptionGroup.OptionValues
+                        .Where(ov => ov.DeletedAt == null)
+                        .Select(ov => new OptionValueResponseDto
+                        {
+                            Id = ov.Id,
+                            Name = ov.Name,
+                            PriceModifier = ov.PriceModifier
+                        }).ToList()
+                })
+                .ToListAsync();
+
+            try
+            {
+                if (itemOptionsGroups == null || itemOptionsGroups.Count == 0)
+                {
+                    return NotFound();
+                }
+
+                return Ok(itemOptionsGroups);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         // POST: api/options/item-option-groups

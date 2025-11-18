@@ -6,7 +6,6 @@ namespace DTFusionZ_BE.Models.DTOs
     {
         public int ItemId { get; set; }
         public required string ItemName { get; set; }
-        public required string CategoryName { get; set; }
         public int OptionGroupId { get; set; }
         public required string OptionGroupName { get; set; }
         public bool IsRequired { get; set; }

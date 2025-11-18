@@ -21,20 +21,48 @@ namespace DTFusionZ_BE.Controllers
 
         // GET: api/meni/items
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Item>>> GetItems()
+        public async Task<ActionResult<IEnumerable<ItemReturnDto>>> GetItems()
         {
             return await _context.Items
+                .Where(i => i.DeletedAt == null)
                 .Include(i => i.Category)
-                .Include(i => i.ItemOptionGroups)
+                .Select(i => new ItemReturnDto
+                {
+                    Id = i.Id,
+                    Name = i.Name,
+                    Description = i.Description,
+                    Price = i.Price,
+                    ImageUrl = i.ImageUrl,
+                    IsAvailable = i.IsAvailable,
+                    CreatedAt = i.CreatedAt,
+                    UpdatedAt = i.UpdatedAt,
+                    CategoryId = i.CategoryId,
+                    CategoryName = i.Category != null ? i.Category.Name : string.Empty
+                })
                 .ToListAsync();
+
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Item>> GetItem(int id)
+        public async Task<ActionResult<ItemReturnDto>> GetItem(int id)
         {
             var item = await _context.Items
+                .Where(i => i.DeletedAt == null && i.Id == id)
                 .Include(i => i.Category)
-                .FirstOrDefaultAsync(i => i.Id == id);
+                .Select(i => new ItemReturnDto
+                {
+                    Id = i.Id,
+                    Name = i.Name,
+                    Description = i.Description,
+                    Price = i.Price,
+                    ImageUrl = i.ImageUrl,
+                    IsAvailable = i.IsAvailable,
+                    CreatedAt = i.CreatedAt,
+                    UpdatedAt = i.UpdatedAt,
+                    CategoryId = i.CategoryId,
+                    CategoryName = i.Category != null ? i.Category.Name : string.Empty
+                })
+                .FirstOrDefaultAsync();
             try
             {
                 if (item == null)
