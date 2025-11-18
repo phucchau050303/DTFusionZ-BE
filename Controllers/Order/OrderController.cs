@@ -82,7 +82,7 @@ namespace DTFusionZ_BE.Controllers
                 _context.Orders.Add(order);
                 await _context.SaveChangesAsync();
 
-                return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
+                return CreatedAtAction(nameof(GetSingleOrder), new { id = order.Id }, order);
             }
             catch (Exception ex)
             {
@@ -92,20 +92,50 @@ namespace DTFusionZ_BE.Controllers
 
         // GET: api/orders/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(int id)
+        public async Task<ActionResult<IEnumerable<OrderReturnDto>>> GetSingleOrder(int id)
         {
             var order = await _context.Orders
+                .Where (o => o.Id == id)
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.OrderItemOptions)
-                .FirstOrDefaultAsync(o => o.Id == id);
+                .Select (o => new OrderReturnDto
+                {
+                    Id = o.Id,
+                    CustomerName = o.CustomerName,
+                    CustomerPhone = o.CustomerPhone,
+                    CustomerEmail = o.CustomerEmail,
+                    OrderType = o.OrderType,
+                    Status = o.Status,
+                    TotalAmount = o.OrderTotal,
+                    CreatedAt = o.CreatedAt,
+                    Items = o.OrderItems.Select(oi => new OrderItemReturnDto
+                    {
+                        ItemName = oi.Item!.Name,
+                        Quantity = oi.Quantity,
+                        TotalPrice = oi.TotalPrice,
+                        SpecialInstructions = oi.SpecialInstructions,
+                        Options = oi.OrderItemOptions.Select(oio => new OrderItemOptionReturnDto
+                        {
+                            OptionValueName = oio.OptionValue!.Name
+                        }).ToList()
+                    }).ToList()
+                }).ToListAsync();
 
-            if (order == null)
+            try
             {
-                return NotFound();
+                if (order == null || order.Count == 0)
+                {
+                    return NotFound();
+                }
+                
+                return Ok(order);
             }
-
-            return order;
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
+
 
         //PUT: api/orders/{id}/status
         [HttpPut("{id}/status")]
