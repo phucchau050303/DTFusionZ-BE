@@ -1,5 +1,7 @@
 using Stripe;
 using Microsoft.Extensions.Options;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using DTFusionZ_BE.Config;
 using DTFusionZ_BE.Data;
 using DTFusionZ_BE.Entities;
@@ -9,9 +11,9 @@ namespace DTFusionZ_BE.Services
     public class StripeService
     {
         private readonly StripeSettings _stripeSettings;
-        private readonly ApplicationDbContext _context;
+        private readonly DTFusionZDbContext _context;
 
-        public StripeService(IOptions<StripeSettings> stripeSettings, ApplicationDbContext context)
+        public StripeService(IOptions<StripeSettings> stripeSettings, DTFusionZDbContext context)
         {
             _stripeSettings = stripeSettings.Value;
             _context = context;
