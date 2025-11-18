@@ -2,8 +2,10 @@ using DTFusionZ_BE.Data;
 using DTFusionZ_BE.Entities;
 using DTFusionZ_BE.Utilities.Seeder;
 using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System.Text.Json.Serialization;
 using DTFusionZ_BE.Config;
+using DTFusionZ_BE.Services;
 using Stripe;
 
 namespace DTFusionZ_BE
