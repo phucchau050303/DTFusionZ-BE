@@ -1,4 +1,4 @@
-using DTFusionZ_BE.Data;
+ using DTFusionZ_BE.Data;
 using DTFusionZ_BE.Entities;
 using DTFusionZ_BE.Utilities.Seeder;
 using Microsoft.EntityFrameworkCore;

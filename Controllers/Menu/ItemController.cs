@@ -31,6 +31,7 @@ namespace DTFusionZ_BE.Controllers
                     Id = i.Id,
                     Name = i.Name,
                     Description = i.Description,
+                    ShortDescription = i.ShortDescription,
                     Price = i.Price,
                     ImageUrl = i.ImageUrl,
                     IsAvailable = i.IsAvailable,
@@ -54,6 +55,7 @@ namespace DTFusionZ_BE.Controllers
                     Id = i.Id,
                     Name = i.Name,
                     Description = i.Description,
+                    ShortDescription = i.ShortDescription,
                     Price = i.Price,
                     ImageUrl = i.ImageUrl,
                     IsAvailable = i.IsAvailable,
@@ -97,6 +99,7 @@ namespace DTFusionZ_BE.Controllers
             {
                 Name = itemDto.Name,
                 Description = itemDto.Description,
+                ShortDescription = itemDto.ShortDescription,
                 Price = itemDto.Price,
                 ImageUrl = itemDto.ImageUrl,
                 IsAvailable = itemDto.IsAvailable,
@@ -140,6 +143,7 @@ namespace DTFusionZ_BE.Controllers
 
             item.Name = itemDto.Name;
             item.Description = itemDto.Description;
+            item.ShortDescription = itemDto.ShortDescription;
             item.Price = itemDto.Price;
             item.ImageUrl = itemDto.ImageUrl;
             item.IsAvailable = itemDto.IsAvailable;
