@@ -1,0 +1,257 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\JRM\\DTFusionZ-BE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|A:\\JRM\\DTFusionZ-BE\\Migrations\\20251126122112_AddedShortDescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251126122112_AddedShortDescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\utilities\\seeder\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:utilities\\seeder\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\models\\dtos\\itemreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:models\\dtos\\itemreturndto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\controllers\\menu\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:controllers\\menu\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\models\\dtos\\itemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:models\\dtos\\itemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\entities\\options\\optiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:entities\\options\\optiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\entities\\options\\itemoptiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:entities\\options\\itemoptiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\entities\\options\\optionvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:entities\\options\\optionvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\entities\\menu\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:entities\\menu\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\entities\\order\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:entities\\order\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\entities\\order\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:entities\\order\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\entities\\order\\orderitemoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:entities\\order\\orderitemoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\entities\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:entities\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|a:\\jrm\\dtfusionz-be\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160FCB15-F9B3-A49B-670D-28852543B29E}|DTFusionZ-BE.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20251126122112_AddedShortDescription.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Migrations\\20251126122112_AddedShortDescription.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251126122112_AddedShortDescription.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Migrations\\20251126122112_AddedShortDescription.cs",
+              "RelativeToolTip": "Migrations\\20251126122112_AddedShortDescription.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T12:21:12.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ItemController.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Controllers\\Menu\\ItemController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Menu\\ItemController.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Controllers\\Menu\\ItemController.cs",
+              "RelativeToolTip": "Controllers\\Menu\\ItemController.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAcwKYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T11:48:39.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ItemCreateDto.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Models\\DTOs\\ItemCreateDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\ItemCreateDto.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Models\\DTOs\\ItemCreateDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\ItemCreateDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T11:48:18.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ItemReturnDto.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Models\\DTOs\\ItemReturnDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\ItemReturnDto.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Models\\DTOs\\ItemReturnDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\ItemReturnDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T11:48:01.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Item.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Entities\\Menu\\Item.cs",
+              "RelativeDocumentMoniker": "Entities\\Menu\\Item.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Entities\\Menu\\Item.cs",
+              "RelativeToolTip": "Entities\\Menu\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T05:38:07.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataSeeder.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Utilities\\Seeder\\DataSeeder.cs",
+              "RelativeDocumentMoniker": "Utilities\\Seeder\\DataSeeder.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Utilities\\Seeder\\DataSeeder.cs",
+              "RelativeToolTip": "Utilities\\Seeder\\DataSeeder.cs",
+              "ViewState": "AgIAAGQBAAAAAAAAAAAkwHoBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T05:36:36.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ItemOptionGroup.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Entities\\Options\\ItemOptionGroup.cs",
+              "RelativeDocumentMoniker": "Entities\\Options\\ItemOptionGroup.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Entities\\Options\\ItemOptionGroup.cs",
+              "RelativeToolTip": "Entities\\Options\\ItemOptionGroup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T05:36:21.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OptionGroup.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Entities\\Options\\OptionGroup.cs",
+              "RelativeDocumentMoniker": "Entities\\Options\\OptionGroup.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Entities\\Options\\OptionGroup.cs",
+              "RelativeToolTip": "Entities\\Options\\OptionGroup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T05:36:21.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OptionValue.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Entities\\Options\\OptionValue.cs",
+              "RelativeDocumentMoniker": "Entities\\Options\\OptionValue.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Entities\\Options\\OptionValue.cs",
+              "RelativeToolTip": "Entities\\Options\\OptionValue.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T05:36:20.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Order.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Entities\\Order\\Order.cs",
+              "RelativeDocumentMoniker": "Entities\\Order\\Order.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Entities\\Order\\Order.cs",
+              "RelativeToolTip": "Entities\\Order\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T05:36:18.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Entities\\Order\\OrderItem.cs",
+              "RelativeDocumentMoniker": "Entities\\Order\\OrderItem.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Entities\\Order\\OrderItem.cs",
+              "RelativeToolTip": "Entities\\Order\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T05:36:17.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderItemOption.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Entities\\Order\\OrderItemOption.cs",
+              "RelativeDocumentMoniker": "Entities\\Order\\OrderItemOption.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Entities\\Order\\OrderItemOption.cs",
+              "RelativeToolTip": "Entities\\Order\\OrderItemOption.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T05:36:15.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Entities\\Admin.cs",
+              "RelativeDocumentMoniker": "Entities\\Admin.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Entities\\Admin.cs",
+              "RelativeToolTip": "Entities\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T05:36:16.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "A:\\JRM\\DTFusionZ-BE\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "A:\\JRM\\DTFusionZ-BE\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:08:08.695Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

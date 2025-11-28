@@ -2,7 +2,9 @@
 using DTFusionZ_BE.Entities;
 using DTFusionZ_BE.Utilities.Seeder;
 using Microsoft.EntityFrameworkCore;
-using Npgsql.EntityFrameworkCore.PostgreSQL;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System.Text.Json.Serialization;
 using DTFusionZ_BE.Config;
 using DTFusionZ_BE.Services;
@@ -18,7 +20,7 @@ namespace DTFusionZ_BE
 
             // Add services to the container.
             builder.Services.AddDbContext<DTFusionZDbContext>(options =>
-                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddControllers().AddJsonOptions(options =>
             {
