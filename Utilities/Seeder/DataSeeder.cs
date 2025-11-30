@@ -409,7 +409,7 @@ namespace DTFusionZ_BE.Utilities.Seeder
                     new ItemOptionGroup { OptionGroup = prawnBentoSauceOptionGroup  },
                     new ItemOptionGroup { OptionGroup = extraMisoOptionGroup  },
                 }
-            }
+            };
 
 
             var categories = new[]
