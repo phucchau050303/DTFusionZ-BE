@@ -169,7 +169,7 @@ namespace DTFusionZ_BE.Utilities.Seeder
                         "dollop of our homemade, subtly sweet and spicy gochujang sauce.",
                 ShortDescription = "A beautifully arranged bowl of warm rice topped with seasoned vegetables, marinated meat, a fried egg, and our spicy gochujang sauce. Mix for the perfect, satisfying bite.",
                 Price = 25m,
-                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/Bibimbap.png",
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/bibimbap.JPG",
                 IsAvailable = true,
                 ItemOptionGroups = new List<ItemOptionGroup>
                 {
@@ -181,10 +181,10 @@ namespace DTFusionZ_BE.Utilities.Seeder
             var chickenKatsucurry = new Item
             {
                 Name = "Chicken Katsucurry",
-                Description = "Experience the ultimate Japanese comfort food. Our Chicken Katsu features a boneless chicken thigh, lightly pounded, seasoned, and coated in authentic, coarse Panko breadcrumbs to achieve an unparalleled crunch. It is expertly fried to a perfect golden hue.\r\n\r\nThe crispy katsu is sliced and placed atop a bed of warm Japanese rice, then generously draped with our homemade curry sauce—a deeply flavored, slightly sweet, and savory sauce simmered with caramelized onions and carrots. A truly satisfying combination of textures and flavors.",
+                Description = "Experience the ultimate Japanese comfort food. Our Chicken Katsu features a boneless chicken thigh, lightly pounded, seasoned, and coated in authentic, coarse Panko breadcrumbs to achieve an unparalleled crunch. It is expertly fried to a perfect golden hue.\r\n\r\nThe crispy katsu is sliced and placed atop a bed of warm Japanese rice, then generously draped with our homemade curry sauceï¿½a deeply flavored, slightly sweet, and savory sauce simmered with caramelized onions and carrots. A truly satisfying combination of textures and flavors.",
                 ShortDescription = "Pank crumbed juicy chicken thigh fillet with creamy curry with carrots",
                 Price = 20m,
-                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/Curry.png",
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/curry.JPG",
                 IsAvailable = true,
                 ItemOptionGroups = new List<ItemOptionGroup>
                 {
@@ -199,7 +199,7 @@ namespace DTFusionZ_BE.Utilities.Seeder
                 Description = "A light and flavorful rice bowl featuring a generous fillet of perfectly grilled white fish (e.g., Barramundi or Cod). It is elegantly finished with a savory reduction of soy sauce, tender Japanese mushrooms, and slivers of bright spring onion. A healthy and delicious choice.",
                 ShortDescription = "Grilled fish topped with Japanese mushrooms, fresh spring onions, and a delicate soy glaze. Served over rice.",
                 Price = 20m,
-                ImageUrl = "",
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/grilledFishRiceBowl.JPG",
                 IsAvailable = true,
                 ItemOptionGroups = new List<ItemOptionGroup>
                 {
@@ -214,7 +214,7 @@ namespace DTFusionZ_BE.Utilities.Seeder
                 Description = "A vibrant and wholesome vegetarian take on the classic Bibimbap. This bowl features a colorful array of seasoned vegetables, including spinach, julienned carrots, mushrooms, all artfully arranged over a bed of fluffy white rice. Topped with a perfectly cooked sunny-side-up egg and tofu, served with our signature gochujang sauce for that authentic spicy kick.",
                 ShortDescription = "A colorful bowl of rice topped with a fried tofu and variety of seasoned vegetables, a fried egg, and our spicy gochujang sauce.",
                 Price = 22m,
-                ImageUrl = "",
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/veggieBibimbap.JPG",
                 IsAvailable = true,
                 ItemOptionGroups = new List<ItemOptionGroup>
                 {
@@ -230,7 +230,7 @@ namespace DTFusionZ_BE.Utilities.Seeder
                 Description = "A hearty and flavorful vegetarian curry featuring a medley of seasonal vegetables simmered in our rich and aromatic Japanese curry sauce. Topped with crispy fried tofu and served over a bed of fluffy Japanese rice, this dish is both satisfying and nourishing.",
                 ShortDescription = "A medley of vegetables and tofu in a rich Japanese curry sauce served with fluffy rice.",
                 Price = 20m,
-                ImageUrl = "",
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/veganCurry.avif",
                 IsAvailable = true,
                 ItemOptionGroups = new List<ItemOptionGroup>
                 {
@@ -253,7 +253,7 @@ namespace DTFusionZ_BE.Utilities.Seeder
                 "A truly comforting and classic Japanese experience.",
                 ShortDescription = "Crispy breaded pork cutlet simmered with onions and egg in a savory-sweet sauce, served over rice.",
                 Price = 20m,
-                ImageUrl = "",
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/Katsudon.avif",
                 IsAvailable = true,
                 ItemOptionGroups = new List<ItemOptionGroup>
                 {
@@ -270,7 +270,7 @@ namespace DTFusionZ_BE.Utilities.Seeder
                 Description = "A thoughtfully curated vegetarian bento box featuring a variety of plant-based delights. This bento includes crispy vegetable spring roll, fluffy rice, fresh salad, and an assortment of pickled vegetables. Accompanied by tofu topped with braised mushroom, it's a balanced and satisfying meal.",
                 ShortDescription = "A balanced vegetarian bento box with vegetable tempura, seasoned rice, fresh salad, tofu, and pickled vegetables.",
                 Price = 20m,
-                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/VeganBento.png",
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/veggieBento.JPG",
                 IsAvailable = true,
                 ItemOptionGroups = new List<ItemOptionGroup>
                 {
@@ -291,7 +291,7 @@ namespace DTFusionZ_BE.Utilities.Seeder
                 "choice for a nutritious, flavorful, and satisfying meal on the go.",
                 ShortDescription = "Crispy breaded pork cutlet served with rice, salad, and pickled vegetables.",
                 Price = 20m,
-                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/TonkatsuPork.png",
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/tonkatsuPork.JPG",
                 IsAvailable = true,
                 ItemOptionGroups = new List<ItemOptionGroup>
                 {
@@ -325,7 +325,7 @@ namespace DTFusionZ_BE.Utilities.Seeder
             {
                 Name = "Chicken Teriyaki Bento",
                 Description = "Indulge in the quintessential flavor of Japanese comfort food with our Chicken Teriyaki Bento. We start with tender cuts of " +
-                "chicken, grilled to perfection and generously basted in our homemade signature teriyaki sauce—a balanced blend of soy, mirin, and ginger that " +
+                "chicken, grilled to perfection and generously basted in our homemade signature teriyaki sauceï¿½a balanced blend of soy, mirin, and ginger that " +
                 "caramelizes beautifully." +
                 "The savory main course is complemented by a carefully selected arrangement of sides, creating a complete and balanced meal in one box:" +
                 "\r\n\r\nFluffy Steamed Rice\r\n\r\nA serving of Fresh Salad with a" +
@@ -341,6 +341,75 @@ namespace DTFusionZ_BE.Utilities.Seeder
                     new ItemOptionGroup { OptionGroup = extraMisoOptionGroup  },
                 }
             };
+
+            var uangiBento = new Item
+            {
+                Name = "Chicken Teriyaki Bento",
+                Description = "Indulge in our exquisite Unagi Bento, a luxurious and beautifully composed meal. The star is the Unagi (Kabayaki): a generous portion of freshwater eel, filleted, grilled over high heat, and repeatedly basted with a rich, syrupy tare sauce. The result is smoky, tender, and intensely flavorful." +
+                "\r\n\r\nThe eel is paired with high-quality short-grain rice, sprinkled with furikake. The complete box includes:" +
+                "\r\n\r\nFluffy Steamed Rice with Furikake\r\n\r\nA serving of Fresh Salad with a light, tangy dressing\r\n\r\nSeasonal Pickles (tsukemono) for a refreshing contrast\r\n\r\nSoba noodles and delicious Fish Tofu " +
+                "\r\n\r\nThis bento box offers a perfect balance of smoky richness and vibrant freshness.",
+                Price = 22m,
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/unagi.JPG",
+                IsAvailable = true,
+                ItemOptionGroups = new List<ItemOptionGroup>
+                {
+                    new ItemOptionGroup { OptionGroup = extraMisoOptionGroup  },
+                }
+            };
+
+            var grilledFishBento = new Item
+            {
+                Name = "Grilled Fish Bento",
+                Description = "Enjoy a balanced and healthy meal with our Grilled Fish Bento Box. The star is a succulent fillet of premium fish, expertly grilled to achieve a tender interior and a delicate, savory crust. The fish is lightly seasoned, allowing its natural flavor to shine." +
+                "\r\n\r\nThe eel is paired with high-quality short-grain rice, sprinkled with furikake. The complete box includes:" +
+                "\r\n\r\nFluffy Steamed Rice with Furikake\r\n\r\nA serving of Fresh Salad with a light, tangy dressing\r\n\r\nSeasonal Pickles (tsukemono) for a refreshing contrast\r\n\r\nSoba noodles and delicious Fish Tofu " +
+                "\r\n\r\nThis bento box offers a perfect balance of smoky richness and vibrant freshness.",
+                ShortDescription = "Grilled with choice of chilli, garlic or teriyaki sauce.",
+                Price = 22m,
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/grilledFishRiceBowl.JPG",
+                IsAvailable = true,
+                ItemOptionGroups = new List<ItemOptionGroup>
+                {
+                    new ItemOptionGroup { OptionGroup = fishforBentoAndRiceBowlOptionGroup },
+                    new ItemOptionGroup { OptionGroup = extraMisoOptionGroup },
+                }
+            };
+
+            var threeFishthreeWaysBento = new Item
+            {
+                Name = "3Fish3Ways Bento",
+                Description = "This deluxe bento box is a feast of both flavor and texture. The main component is a generous piece of battered fried white fish, grilled salmon and tuna, drizzled with different types of sauce" +
+                "\r\n\r\nThe complete box includes:" +
+                "\r\n\r\nFluffy Steamed Rice with Furikake\r\n\r\nA serving of Fresh Salad with a light, tangy dressing\r\n\r\nSeasonal Pickles (tsukemono) for a refreshing contrast\r\n\r\nSoba noodles and delicious Fish Tofu " +
+                "\r\n\r\nThis bento box is perfect for seafood lovers seeking variety and balance in one meal.",
+                ShortDescription = "Grilled, battered fried fish served with rice, salad, and pickled vegetables.",
+                Price = 25m,
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/3f3w.JPG",
+                IsAvailable = true,
+                ItemOptionGroups = new List<ItemOptionGroup>
+                {
+                    new ItemOptionGroup { OptionGroup = extraMisoOptionGroup  },
+                }
+            };
+
+            var prawnBento = new Item
+            {
+                Name = "Prawn Bento",
+                Description = "Our Prawn Bento Box is a vibrant celebration of fresh seafood and balanced sides. The main feature is a generous portion of plump, marinated prawns, grilled to perfection and brushed with a rich, savory glaze (like a chilli garlic or teriyaki sauce) that caramelizes on the grill." +
+                "\r\n\r\nThe prawns are paired with high-quality short-grain rice, sprinkled with furikake. The complete box includes:" +
+                "\r\n\r\nFluffy Steamed Rice with Furikake\r\n\r\nA serving of Fresh Salad with a light, tangy dressing\r\n\r\nSeasonal Pickles (tsukemono) for a refreshing contrast\r\n\r\nSoba noodles and delicious Fish Tofu " +
+                "\r\n\r\nThis bento box offers a perfect balance of textures and flavors, making it an ideal choice for seafood lovers.",
+                ShortDescription = "Crispy tempura prawns served with rice, salad, and pickled vegetables.",
+                Price = 25m,
+                ImageUrl = "https://dtfusionzstorage.blob.core.windows.net/menu-images/prawnBento.JPG",
+                IsAvailable = true,
+                ItemOptionGroups = new List<ItemOptionGroup>
+                {
+                    new ItemOptionGroup { OptionGroup = prawnBentoSauceOptionGroup  },
+                    new ItemOptionGroup { OptionGroup = extraMisoOptionGroup  },
+                }
+            }
 
 
             var categories = new[]
